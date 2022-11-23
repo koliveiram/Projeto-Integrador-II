@@ -10,5 +10,5 @@ export interface Agendamento {
   cliente: ICliente,
   diarista: Diarista,
   estrelas: number,
-  comentario: string;
+  comentario: string,
 }

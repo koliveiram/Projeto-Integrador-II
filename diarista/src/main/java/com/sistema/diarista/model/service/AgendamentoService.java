@@ -51,6 +51,8 @@ public class AgendamentoService extends GenericCrudService<Agendamento, Long, Ag
                 agendamentoDTO.setDataAgendada(a.getDataAgendada());
                 agendamentoDTO.setCliente(a.getCliente());
                 agendamentoDTO.setDiarista(a.getDiarista());
+                agendamentoDTO.setComentario(a.getComentario());
+                agendamentoDTO.setEstrelas(a.getEstrelas());
                 agendamentoDTO.setId(a.getId());
                 dtoList.add(agendamentoDTO);
             }
@@ -97,6 +99,8 @@ public class AgendamentoService extends GenericCrudService<Agendamento, Long, Ag
                 agendamentoDTO.setCliente(a.getCliente());
                 agendamentoDTO.setDiarista(a.getDiarista());
                 agendamentoDTO.setId(a.getId());
+                agendamentoDTO.setComentario(a.getComentario());
+                agendamentoDTO.setEstrelas(a.getEstrelas());
                 dtoList.add(agendamentoDTO);
             }
 

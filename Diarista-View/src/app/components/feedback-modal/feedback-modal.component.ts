@@ -3,6 +3,7 @@ import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-feedback-modal',
@@ -20,7 +21,8 @@ export class FeedbackModalComponent {
   constructor(
     private modalRef: BsModalRef,
     private formBuilder: NonNullableFormBuilder,
-    private agendamentoService: AgendamentoService
+    private agendamentoService: AgendamentoService,
+    private toaster: ToastrService
   ){
 
   }
@@ -32,7 +34,15 @@ export class FeedbackModalComponent {
           estrelas: agendamento.estrelas,
           comentario: agendamento.comentario
         })
-      })
+        if(!this.avaliacao.valid){
+          this.toaster.warning('Ainda não há avaliação!', '', {
+            timeOut: 2000,
+          });
+        }
+      }, (error) => {
+
+      }
+      )
     }
   }
 

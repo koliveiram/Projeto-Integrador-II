@@ -29,16 +29,16 @@
                 <td *ngIf="agendamento.dataRealizada">
                   <button class="btn btn-success" (click)="openModalComponent(agendamento.id,
                   agendamento.diarista.nome, agendamento.diarista.id)"
-                  *ngIf="!isDiarista && agendamento.comentario === ''">
+                  *ngIf="!isDiarista && agendamento.comentario === null">
                     Avaliar
                   </button>
-                  <div *ngIf="!isDiarista && agendamento.comentario != ''">
+                  <div *ngIf="!isDiarista && agendamento.comentario != null">
                     Já avaliado!
                   </div>
-                  <button class="btn btn-success" (click)="openModal(agendamento.id)" *ngIf="isDiarista && agendamento.comentario != ''">
+                  <button class="btn btn-success" (click)="openModal(agendamento.id)" *ngIf="isDiarista && agendamento.comentario != null">
                     Ver avaliação
                   </button>
-                  <div *ngIf="isDiarista && agendamento.comentario === ''">
+                  <div *ngIf="isDiarista && agendamento.comentario === null">
                     Ainda não avaliado pelo usuário.
                   </div>
                 </td>
@@ -50,14 +50,7 @@
     </table>
   </div>
 </div>
-<div class="box">
-  <div class="cor">
-    <pagination-controls
-    (pageChange)="p = $event"
-    *ngIf="agendamentos.length > 0"
-    ></pagination-controls>
-  </div>
-</div>
+
 
 
 

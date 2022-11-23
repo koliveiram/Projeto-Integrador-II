@@ -49,7 +49,6 @@
           <th scope="col">Localidade</th>
           <th scope="col">Contato</th>
           <th scope="col">Avaliação</th>
-          <th scope="col">Nº Avaliações</th>
         </tr>
       </thead>
       <tbody>
@@ -68,8 +67,7 @@
           <td> {{ diarista.nome }} </td>
           <td> {{ diarista.endereco }} </td>
           <td> {{ diarista.contato }} </td>
-          <td> {{ diarista.avaliacao? diarista.avaliacao: '0'}}/5 </td>
-          <td> {{ diarista.numAvaliacoes? diarista.numAvaliacoes : 'Não possui avaliação.'}} </td>
+          <td> {{ diarista.avaliacao? diarista.avaliacao: 'Não possui avaliação.' }} </td>
         </tr>
       </tbody>
     </table>

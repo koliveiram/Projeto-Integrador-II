@@ -35,7 +35,7 @@
                         <button class="btn btn-info" routerLink="/agendamentos/editar/{{agendamento.id}}" *ngIf="!isDiarista">
                           Editar
                         </button>
-                        <button class="btn btn-success" (click)="finalizar(agendamento.id)" *ngIf="isDiarista">
+                        <button class="btn btn-success" (click)="finalizar(agendamento.id)" *ngIf="isDiarista && !agendamento.dataRealizada">
                           Finalizar
                         </button>
                         <button class="btn btn-danger" (click)="openModalComponent(agendamento.id)">
@@ -48,14 +48,7 @@
     </table>
   </div>
 </div>
-<div class="box">
-  <div class="cor">
-    <pagination-controls
-    (pageChange)="p = $event"
-    *ngIf="agendamentos.length > 0"
-    ></pagination-controls>
-  </div>
-</div>
+
 
 
 
